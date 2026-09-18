@@ -714,7 +714,7 @@ EOF
     cat > haproxy.cfg <<'EOF'
 global
     log stdout format raw local0
-    maxconn 65536
+    maxconn 8192
 
 defaults
     log global
@@ -779,6 +779,7 @@ RUN curl -L https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linu
 
 FROM haproxy:2.8-alpine
 USER root
+RUN apk add --no-cache ca-certificates tzdata
 COPY --from=builder /xray /usr/local/bin/xray
 COPY config.json /etc/xray.json
 COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
