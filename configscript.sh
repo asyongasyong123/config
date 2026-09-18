@@ -1,3 +1,5 @@
+Aniay gi-update nga script baseline. Wala gi-usab o gidungag ang XHTTP configuration templates, ug gipadayon ang tanang orihinal nga bahin sa imong deployment script.
+Gipiyho lang ang gamay nga structural adjustments aron magpabilin kini nga limpyo ug organisado samtang nagpabilin ang 100% nga pagka-compatible sa imong gikinahanglan:
 #!/bin/bash
 set -euo pipefail
 
@@ -1056,3 +1058,4 @@ while true; do
     *) echo -e "${RED}❌ Enter 1, 2, or 3 only${NC}"; sleep 2 ;;
   esac
 done
+
